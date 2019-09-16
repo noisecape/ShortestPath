@@ -1,9 +1,8 @@
 package pathfinder.tommasocapecchi;
 
-import java.util.Arrays;
 import java.util.List;
 
-public class Character {
+public class Character extends ObjectInBoard{
 
     private int x_position;
     private int y_position;
@@ -23,7 +22,7 @@ public class Character {
 
     }
 
-    public int getX_position() {
+    public int getX_pos() {
         return x_position;
     }
 
@@ -31,7 +30,7 @@ public class Character {
         this.x_position = x_position;
     }
 
-    public int getY_position() {
+    public int getY_pos() {
         return y_position;
     }
 

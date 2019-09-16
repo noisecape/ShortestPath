@@ -1,6 +1,8 @@
 package pathfinder.tommasocapecchi;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 /*
@@ -19,11 +21,13 @@ public class Board {
     private int number_of_columns;
     private int number_of_coins;
     private String board[][];
+    private List<Coin> coin_list;
 
     Board(int number_of_rows, int number_of_columns, int number_of_coins){
         this.number_of_columns = number_of_columns;
         this.number_of_rows = number_of_rows;
         this.number_of_coins = number_of_coins;
+        this.coin_list = new LinkedList<>();
         init_board();
         generate_coins();
     }
@@ -43,6 +47,8 @@ public class Board {
             int randomRow = randomizer.nextInt(number_of_rows);
             int randomColumn = randomizer.nextInt(number_of_columns);
             if(check_valid_position(randomRow,randomColumn)) {
+                Coin coin = new Coin(randomRow, randomColumn);
+                coin_list.add(coin);
                 board[randomRow][randomColumn] = "C";
                 number_of_coins--;
             }
@@ -59,8 +65,12 @@ public class Board {
         return this.board;
     }
 
-    public void setBoard(String[][] board) {
+    public void set_board(String[][] board) {
         this.board = board;
+    }
+
+    public List<Coin> get_coin_list() {
+        return coin_list;
     }
 
     public void print_board(){
