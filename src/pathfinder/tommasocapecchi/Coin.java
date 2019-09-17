@@ -7,8 +7,9 @@ public class Coin extends ObjectInBoard {
     private int x_pos;
     private int y_pos;
     private boolean taken;
+    private boolean has_neighbour;
     private double distance_from_character;
-    private Coin next_Coin;
+    private Coin neighbour;
     private String id;
 
     Coin(int x_pos, int y_pos){
@@ -16,6 +17,7 @@ public class Coin extends ObjectInBoard {
         this.y_pos = y_pos;
         this.taken = false;
         this.distance_from_character = 0.0;
+        this.has_neighbour = false;
         this.id = UUID.randomUUID().toString();
     }
 
@@ -44,14 +46,22 @@ public class Coin extends ObjectInBoard {
     }
 
     public Coin getNext_Coin() {
-        return next_Coin;
+        return neighbour;
     }
 
-    public void setNext_Coin(Coin next_Coin) {
-        this.next_Coin = next_Coin;
+    public void set_neighbour(Coin next_Coin) {
+        this.neighbour = next_Coin;
     }
 
     public String getId() {
         return id;
+    }
+
+    public boolean isHas_neighbour() {
+        return has_neighbour;
+    }
+
+    public void setHas_neighbour(boolean has_neighbour) {
+        this.has_neighbour = has_neighbour;
     }
 }
