@@ -18,7 +18,7 @@ public class Character extends ObjectInBoard{
 
     private void set_position_in_board(){
         if (board[x_position][y_position].equals(" "))
-            board[x_position][y_position] = "O";
+            board[x_position][y_position] = "0";
 
     }
 

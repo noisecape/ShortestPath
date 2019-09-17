@@ -41,7 +41,7 @@ public class Main {
     }
 
     void create_edges_for_all_nodes(Board board, GraphGenerator graphGenerator){
-        graphGenerator.create_nearest_edge_between_nodes(board.get_coin_list());
+        graphGenerator.compute_distance_between_nodes(board.get_coin_list());
     }
 
 }

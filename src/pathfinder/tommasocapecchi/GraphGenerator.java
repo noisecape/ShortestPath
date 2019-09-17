@@ -1,8 +1,6 @@
 package pathfinder.tommasocapecchi;
 
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 public class GraphGenerator {
 
@@ -14,27 +12,16 @@ public class GraphGenerator {
         return result;
     }
 
-    void create_nearest_edge_between_nodes(List<Coin> coin_list){
-        Iterator<Coin> iterator = coin_list.iterator();
-        while(iterator.hasNext()){
-            Coin coin = iterator.next();
-            coin.set_neighbour(this.find_neighbour(coin,coin_list));
-            coin.setHas_neighbour(true);
+    void compute_distance_between_nodes(LinkedList<Coin> coin_list){
+        for(int i = 0; i<coin_list.size()-1; i++){
+            Coin c1 = coin_list.get(i);
+            Coin c2 = coin_list.get(i+1);
+            c1.set_distance_from_neighbour(compute_Euclid_distance(c1,c2));
+            c1.set_neighbour(c2);
         }
+        Coin last = coin_list.getLast();
+        last.set_distance_from_neighbour(this.compute_Euclid_distance(last,coin_list.getFirst()));
+        last.set_neighbour(coin_list.getFirst());
     }
 
-    Coin find_neighbour(Coin coin, List<Coin> coin_list){
-        double optimal_distance = MAX_DISTANCE;
-        Coin neighbour = null;
-        for (Coin coin_selected: coin_list) {
-            if (!coin_selected.isHas_neighbour() && !(coin.getId().equals(coin_selected.getId()))) {
-                double distance = this.compute_Euclid_distance(coin, coin_selected);
-                if (distance < optimal_distance) {
-                    optimal_distance = distance;
-                    neighbour = coin_selected;
-                }
-            }
-        }
-        return neighbour;
-    }
 }

@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="18305fb4-4d73-4b52-a39d-bcf5750c3c99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Coin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/GraphGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/GraphGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="270">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -30,11 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/GraphGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -51,17 +51,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Coin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="51" column="29" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="29" />
+            <state relative-caret-position="480">
+              <caret line="73" column="27" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="27" />
               <folding>
                 <element signature="e#391#392#0" expanded="true" />
                 <element signature="e#419#420#0" expanded="true" />
                 <element signature="e#448#449#0" expanded="true" />
                 <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#1303#1304#0" expanded="true" />
-                <element signature="e#1339#1340#0" expanded="true" />
-                <element signature="e#1398#1399#0" expanded="true" />
-                <element signature="e#1448#1449#0" expanded="true" />
+                <element signature="method#set_distace_from_character#0;class#Coin#0" />
+                <element signature="method#setDistance_from_neighbour#0;class#Coin#0" />
+                <element signature="e#1627#1628#0" expanded="true" />
+                <element signature="e#1657#1658#0" expanded="true" />
+                <element signature="e#1710#1711#0" expanded="true" />
+                <element signature="e#1748#1749#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,10 +72,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="501">
+              <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1957#1958#0" expanded="true" />
                 <element signature="e#1989#1990#0" expanded="true" />
               </folding>
             </state>
@@ -83,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -113,13 +116,14 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/MovableObject.java" />
         <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/MovableInBoard.java" />
-        <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Character.java" />
-        <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Board.java" />
         <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/ObjectInBoard.java" />
         <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/CompareByID.java" />
+        <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/BruteForce.java" />
         <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Coin.java" />
-        <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/GraphGenerator.java" />
+        <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Board.java" />
+        <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Character.java" />
         <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Main.java" />
+        <option value="$PROJECT_DIR$/src/pathfinder/tommasocapecchi/GraphGenerator.java" />
       </list>
     </option>
   </component>
@@ -160,7 +164,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568730486762" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568758258745" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -219,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568716288186</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Graph created but it's not a connected graph, so for now it's impossible to run the Dijikstra algorithm.">
+      <created>1568736255562</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568736255562</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -257,19 +268,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the board and computed the Euclid distances for each Coin from the character" />
     <MESSAGE value="Trying to create a graph from the list of coins" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to create a graph from the list of coins" />
+    <MESSAGE value="Graph created but it's not a connected graph, so for now it's impossible to run the Dijikstra algorithm." />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph created but it's not a connected graph, so for now it's impossible to run the Dijikstra algorithm." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/GraphGenerator.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="board.coin_list.get(4)" />
@@ -282,13 +284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="4857" column="33" selection-start-line="4857" selection-start-column="25" selection-end-line="4857" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -320,13 +315,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/BruteForce.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Coin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="73" column="27" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1989#1990#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#set_distace_from_character#0;class#Coin#0" />
+            <element signature="method#setDistance_from_neighbour#0;class#Coin#0" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1748#1749#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -338,37 +348,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Coin.java">
+    <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="29" />
+        <state relative-caret-position="501">
+          <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
           <folding>
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1398#1399#0" expanded="true" />
-            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#1989#1990#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/GraphGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pathfinder/tommasocapecchi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
