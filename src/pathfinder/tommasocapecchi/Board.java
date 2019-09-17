@@ -17,6 +17,7 @@ C  -> represents coins into the board
 
 
 public class Board {
+
     private int number_of_rows;
     private int number_of_columns;
     private int number_of_coins;

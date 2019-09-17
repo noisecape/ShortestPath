@@ -1,17 +1,22 @@
 package pathfinder.tommasocapecchi;
 
+import java.util.UUID;
+
 public class Coin extends ObjectInBoard {
 
     private int x_pos;
     private int y_pos;
     private boolean taken;
     private double distance_from_character;
+    private Coin next_Coin;
+    private String id;
 
     Coin(int x_pos, int y_pos){
         this.x_pos = x_pos;
         this.y_pos = y_pos;
         this.taken = false;
         this.distance_from_character = 0.0;
+        this.id = UUID.randomUUID().toString();
     }
 
     public int getX_pos() {
@@ -36,5 +41,17 @@ public class Coin extends ObjectInBoard {
 
     public void set_taken(boolean taken) {
         this.taken = taken;
+    }
+
+    public Coin getNext_Coin() {
+        return next_Coin;
+    }
+
+    public void setNext_Coin(Coin next_Coin) {
+        this.next_Coin = next_Coin;
+    }
+
+    public String getId() {
+        return id;
     }
 }

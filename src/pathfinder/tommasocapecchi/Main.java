@@ -5,11 +5,12 @@ public class Main {
 
         Main m = new Main();
         Board board = m.create_board();
-        Character character = m.create_character(board);
+        ObjectInBoard character = m.create_character(board);
         GraphGenerator graphGenerator = m.create_graph_generator();
 
         m.init_board(board,character);
         m.compute_Euclid_distance_from_character(board,character,graphGenerator);
+        m.create_edges_for_all_nodes(board,graphGenerator);
     }
 
     Board create_board(){
@@ -24,17 +25,23 @@ public class Main {
         return new GraphGenerator();
     }
 
-    void init_board(Board board, Character character){
-        board.set_board(character.getBoard());
+    void init_board(Board board, ObjectInBoard character){
+        if(character instanceof Character){
+            Character new_character = (Character)character;
+            board.set_board(new_character.getBoard());
+        }
         System.out.println();
         board.print_board();
     }
     
-    void compute_Euclid_distance_from_character(Board board, Character character, GraphGenerator graphGenerator){
+    void compute_Euclid_distance_from_character(Board board, ObjectInBoard character, GraphGenerator graphGenerator){
         for (Coin coin :board.get_coin_list()) {
             coin.set_distace_from_character(graphGenerator.compute_Euclid_distance(character,coin));
-            System.out.println(coin.get_distance_from_character());
         }
+    }
+
+    void create_edges_for_all_nodes(Board board, GraphGenerator graphGenerator){
+        graphGenerator.create_nearest_edge_between_nodes(board.get_coin_list());
     }
 
 }

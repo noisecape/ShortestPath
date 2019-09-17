@@ -1,6 +1,11 @@
 package pathfinder.tommasocapecchi;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class GraphGenerator {
+
+    private final int MAX_DISTANCE = 10000;
 
     double compute_Euclid_distance(ObjectInBoard first_obj, ObjectInBoard second_obj){
         double result;
@@ -8,5 +13,8 @@ public class GraphGenerator {
         return result;
     }
 
+    void create_nearest_edge_between_nodes(List<Coin> coin_list){
+        List<Coin> graph = new LinkedList<>(coin_list);
 
+    }
 }
