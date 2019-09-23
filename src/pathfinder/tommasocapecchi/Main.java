@@ -1,47 +1,44 @@
 package pathfinder.tommasocapecchi;
 
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String args[]){
 
         Main m = new Main();
-        Board board = m.create_board();
-        ObjectInBoard character = m.create_character(board);
-        GraphGenerator graphGenerator = m.create_graph_generator();
+
+        Board board = new Board(10,10,9);
+
+        ObjectInBoard character = new Character(9,9, board.get_board());
 
         m.init_board(board,character);
-        m.compute_Euclid_distance_from_character(board,character,graphGenerator);
-        m.create_edges_for_all_nodes(board,graphGenerator);
-    }
 
-    Board create_board(){
-        return new Board(10,10,9);
-    }
+        Distance_Finder distance_finder = new Distance_Finder(board.get_objects_in_board());
 
-    Character create_character(Board board){
-        return new Character(9,9, board.get_board());
-    }
+        m.find_nearest_neighbour(distance_finder);
 
-    GraphGenerator create_graph_generator(){
-        return new GraphGenerator();
+        m.compute_shortest_path(character, board, distance_finder);
+
+
     }
 
     void init_board(Board board, ObjectInBoard character){
         if(character instanceof Character){
             Character new_character = (Character)character;
-            board.set_board(new_character.getBoard());
+            board.get_objects_in_board().addFirst(new_character);
         }
         System.out.println();
         board.print_board();
     }
-    
-    void compute_Euclid_distance_from_character(Board board, ObjectInBoard character, GraphGenerator graphGenerator){
-        for (Coin coin :board.get_coin_list()) {
-            coin.set_distace_from_character(graphGenerator.compute_Euclid_distance(character,coin));
+
+    void find_nearest_neighbour(Distance_Finder distance_finder){
+        for(ObjectInBoard object : distance_finder.get_objects_in_board()){
+            distance_finder.find_neighbor(object);
         }
     }
 
-    void create_edges_for_all_nodes(Board board, GraphGenerator graphGenerator){
-        graphGenerator.compute_distance_between_nodes(board.get_coin_list());
+    void compute_shortest_path(ObjectInBoard character,Board board, Distance_Finder graphGenerator){
+
     }
 
 }

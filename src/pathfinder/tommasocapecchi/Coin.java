@@ -9,7 +9,8 @@ public class Coin extends ObjectInBoard {
     private boolean taken;
     private double distance_from_character;
     private double distance_from_neighbour;
-    private Coin neighbour;
+    private ObjectInBoard next_object;
+    private ObjectInBoard previous_object;
     private Board.Letters letters;
     private String id;
 
@@ -20,7 +21,7 @@ public class Coin extends ObjectInBoard {
         this.distance_from_character = 0.0;
         this.distance_from_neighbour = 0.0;
         this.id = UUID.randomUUID().toString();
-        letters = null;
+        this.letters = null;
     }
 
     public int getX_pos() {
@@ -47,12 +48,20 @@ public class Coin extends ObjectInBoard {
         this.taken = taken;
     }
 
-    public Coin getNext_Coin() {
-        return neighbour;
+    public ObjectInBoard getNext_Coin() {
+        return next_object;
     }
 
-    public void set_neighbour(Coin next_Coin) {
-        this.neighbour = next_Coin;
+    public void set_next_object(Coin next_Coin) {
+        this.next_object = next_Coin;
+    }
+
+    public ObjectInBoard get_previous_object() {
+        return previous_object;
+    }
+
+    public void set_previous_object(ObjectInBoard previous_object) {
+        this.previous_object = previous_object;
     }
 
     public String getId() {

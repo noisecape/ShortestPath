@@ -21,13 +21,13 @@ public class Board {
     private int number_of_columns;
     private int number_of_coins;
     private String board[][];
-    private LinkedList<Coin> coin_list;
+    private LinkedList<ObjectInBoard> objects_in_board;
 
     Board(int number_of_rows, int number_of_columns, int number_of_coins){
         this.number_of_columns = number_of_columns;
         this.number_of_rows = number_of_rows;
         this.number_of_coins = number_of_coins;
-        this.coin_list = new LinkedList<>();
+        this.objects_in_board = new LinkedList<>();
         init_board();
         generate_coins();
     }
@@ -50,7 +50,7 @@ public class Board {
             if(check_valid_position(randomRow,randomColumn)) {
                 Coin coin = new Coin(randomRow, randomColumn);
                 coin.set_letters(assign_letter(counter_for_printing));
-                coin_list.add(coin);
+                objects_in_board.add(coin);
                 board[randomRow][randomColumn] = coin.get_letters().toString();
                 counter_for_printing += 1;
                 number_of_coins--;
@@ -132,8 +132,8 @@ public class Board {
         this.board = board;
     }
 
-    public LinkedList<Coin> get_coin_list() {
-        return coin_list;
+    public LinkedList<ObjectInBoard> get_objects_in_board() {
+        return objects_in_board;
     }
 
     public void print_board(){
