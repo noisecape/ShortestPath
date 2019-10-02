@@ -2,41 +2,23 @@ package pathfinder.tommasocapecchi;
 
 public class Main {
     public static void main(String args[]){
+    	int rows = 10;
+    	int columns = 10;
+    	Main main = new Main();
 
-        Main m = new Main();
+        //number_of_nodes = 10 means that there are 9 coins and 1 root
+        Board board = new Board(rows,columns,10);
 
-        Board board = new Board(10,10,9);
+        main.init_board(board);
 
-        ObjectInBoard character = new Character(9,9, board.get_board());
-
-        m.init_board(board,character);
-
-        Distance_Finder distance_finder = new Distance_Finder(board.get_objects_in_board());
-
-        m.find_nearest_neighbour(distance_finder);
-
-        m.compute_shortest_path(character, board, distance_finder);
-
-
+        Graph graph = new Graph(rows, columns, board.get_nodes_in_board());
+        
     }
 
-    void init_board(Board board, ObjectInBoard character){
-        if(character instanceof Character){
-            Character new_character = (Character)character;
-            board.get_objects_in_board().addFirst(new_character);
-        }
+    void init_board(Board board){
+        board.generate_nodes();
         System.out.println();
         board.print_board();
-    }
-
-    void find_nearest_neighbour(Distance_Finder distance_finder){
-        for(ObjectInBoard object : distance_finder.get_objects_in_board()){
-            distance_finder.find_neighbor(object);
-        }
-    }
-
-    void compute_shortest_path(ObjectInBoard character,Board board, Distance_Finder graphGenerator){
-
     }
 
 }

@@ -19,17 +19,16 @@ public class Board {
 
     private int number_of_rows;
     private int number_of_columns;
-    private int number_of_coins;
+    private int number_of_nodes;
     private String board[][];
-    private LinkedList<ObjectInBoard> objects_in_board;
+    private LinkedList<Node> nodes_in_board;
 
     Board(int number_of_rows, int number_of_columns, int number_of_coins){
         this.number_of_columns = number_of_columns;
         this.number_of_rows = number_of_rows;
-        this.number_of_coins = number_of_coins;
-        this.objects_in_board = new LinkedList<>();
+        this.number_of_nodes = number_of_coins;
+        this.nodes_in_board = new LinkedList<>();
         init_board();
-        generate_coins();
     }
 
     private void init_board(){
@@ -40,88 +39,36 @@ public class Board {
             }
         }
     }
-
-    private void generate_coins(){
+    
+    private boolean check_valid_position(int row, int column){
+        if (board[row][column].equals("C"))
+            return false;
+        return true;
+    }
+    
+    void generate_nodes(){
         Random randomizer = new Random();
-        int counter_for_printing = 0;
-        while(number_of_coins > 0){
+        int indices = 0;
+        while(number_of_nodes > 0){
             int randomRow = randomizer.nextInt(number_of_rows);
             int randomColumn = randomizer.nextInt(number_of_columns);
             if(check_valid_position(randomRow,randomColumn)) {
-                Coin coin = new Coin(randomRow, randomColumn);
-                coin.set_letters(assign_letter(counter_for_printing));
-                objects_in_board.add(coin);
-                board[randomRow][randomColumn] = coin.get_letters().toString();
-                counter_for_printing += 1;
-                number_of_coins--;
+            	if (number_of_nodes == 1) {
+            		Node root = new Node(indices,randomRow, randomColumn);
+            		root.set_letters(Letters.O);
+            		nodes_in_board.add(root);
+                    board[randomRow][randomColumn] = root.get_letters().toString();
+                    indices++;
+            	}else {
+            		Node coin = new Node(indices,randomRow, randomColumn);
+                    coin.set_letters(Letters.C);
+                    nodes_in_board.add(coin);
+                    board[randomRow][randomColumn] = coin.get_letters().toString();
+                    indices++;
+            	}
+            	number_of_nodes--;
             }
         }
-    }
-
-    private Letters assign_letter(int count){
-        switch (count){
-            case 0:
-                return Letters.A;
-            case 1:
-                return Letters.B;
-            case 2:
-                return Letters.C;
-            case 3:
-                return Letters.D;
-            case 4:
-                return Letters.E;
-            case 5:
-                return Letters.F;
-            case 6:
-                return Letters.G;
-            case 7:
-                return Letters.H;
-            case 8:
-                return Letters.I;
-            case 9:
-                return Letters.J;
-            case 10:
-                return Letters.K;
-            case 11:
-                return Letters.L;
-            case 12:
-                return Letters.M;
-            case 13:
-                return Letters.N;
-            case 14:
-                return Letters.O;
-            case 15:
-                return Letters.P;
-            case 16:
-                return Letters.Q;
-            case 17:
-                return Letters.R;
-            case 18:
-                return Letters.S;
-            case 19:
-                return Letters.T;
-            case 20:
-                return Letters.U;
-            case 21:
-                return Letters.V;
-            case 22:
-                return Letters.W;
-            case 23:
-                return Letters.X;
-            case 24:
-                return Letters.Y;
-            case 25:
-                return Letters.Z;
-                default:
-                    return null;
-        }
-    }
-
-
-    private boolean check_valid_position(int row, int column){
-        if (board[row][column].equals("0"))
-            return false;
-        return true;
     }
 
     public String[][] get_board(){
@@ -132,8 +79,8 @@ public class Board {
         this.board = board;
     }
 
-    public LinkedList<ObjectInBoard> get_objects_in_board() {
-        return objects_in_board;
+    public LinkedList<Node> get_nodes_in_board() {
+        return nodes_in_board;
     }
 
     public void print_board(){
@@ -143,6 +90,6 @@ public class Board {
     }
 
     enum Letters {
-        A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z;
+        X,C,O;
     }
 }
