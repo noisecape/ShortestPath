@@ -56,7 +56,7 @@ public class Board {
             	if (number_of_nodes == 1) {
             		Node root = new Node(indices,randomRow, randomColumn);
             		root.set_letters(Letters.O);
-            		nodes_in_board.add(root);
+            		nodes_in_board.addFirst(root);
                     board[randomRow][randomColumn] = root.get_letters().toString();
                     indices++;
             	}else {

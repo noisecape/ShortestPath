@@ -2,12 +2,12 @@ package pathfinder.tommasocapecchi;
 
 import java.util.UUID;
 
+import pathfinder.tommasocapecchi.Board.Letters;
+
 public class Node {
 	
     private int x_pos, y_pos;
     private int index;
-    private Node previous;
-    private Node next;
     private final String ID;
     private Board.Letters letters;
     
@@ -35,7 +35,7 @@ public class Node {
     }
     
     public void set_y(int y) {
-    	this.x_pos = y;
+    	this.y_pos = y;
     }
     
     public void set_index(int index) {
