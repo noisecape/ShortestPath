@@ -1,5 +1,7 @@
 package pathfinder.tommasocapecchi;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String args[]){
     	int rows = 10;
@@ -12,8 +14,16 @@ public class Main {
         main.init_board(board);
 
         Graph graph = new Graph(rows, columns, board.get_nodes_in_board());
-        
+        double[][] adiacency_matrix = graph.get_adiacency_matrix();
+        main.print_adiacency_matrix(adiacency_matrix);
     }
+    
+    public void print_adiacency_matrix(double[][] adiacency_matrix){
+    	System.out.println();
+        for(int i = 0; i<adiacency_matrix.length; i++){
+            System.out.println(Arrays.toString(adiacency_matrix[i]));
+        }
+     }
 
     void init_board(Board board){
         board.generate_nodes();
